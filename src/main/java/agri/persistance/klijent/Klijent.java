@@ -1,7 +1,12 @@
-package agri.persistance;
+package agri.persistance.klijent;
+
+import agri.persistance.narudzbina.Narudzbina;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.List;
 
 
@@ -30,6 +35,7 @@ public class Klijent implements Serializable {
 	private Integer pib;
 
 	//bi-directional many-to-one association to Narudzbina
+	@JsonIgnore
 	@OneToMany(mappedBy="klijent")
 	private List<Narudzbina> narudzbinas;
 

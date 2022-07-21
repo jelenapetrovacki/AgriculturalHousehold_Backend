@@ -5,7 +5,7 @@ import java.util.Collection;
 import org.mapstruct.Mapper;
 
 import agri.api.klijent.KlijentModel;
-import agri.persistance.Klijent;
+import agri.persistance.klijent.Klijent;
 
 @Mapper(componentModel = "spring")
 public interface KlijentMapper {

@@ -1,7 +1,12 @@
-package agri.persistance;
+package agri.persistance.tip_proizvoda;
+
+import agri.persistance.stavka.Stavka;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -30,6 +35,7 @@ public class TipProizvoda implements Serializable {
 	private String nazivTipa;
 
 	//bi-directional many-to-one association to Stavka
+	@JsonIgnore
 	@OneToMany(mappedBy="tipProizvoda")
 	private List<Stavka> stavkas;
 

@@ -1,7 +1,14 @@
-package agri.persistance;
+package agri.persistance.narudzbina;
+
+import agri.persistance.faktura.Faktura;
+import agri.persistance.stavka.Stavka;
+import agri.persistance.klijent.Klijent;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
@@ -27,6 +34,7 @@ public class Narudzbina implements Serializable {
 	private BigDecimal iznos;
 
 	//bi-directional many-to-one association to Faktura
+	@JsonIgnore
 	@OneToMany(mappedBy="narudzbina")
 	private List<Faktura> fakturas;
 

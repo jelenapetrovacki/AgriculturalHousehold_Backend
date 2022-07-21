@@ -1,7 +1,15 @@
-package agri.persistance;
+package agri.persistance.faktura;
+
+import agri.persistance.narudzbina.Narudzbina;
+import agri.persistance.stavka.Stavka;
+import agri.persistance.svrha.Svrha;
+import agri.persistance.uplata.Uplata;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
@@ -38,6 +46,7 @@ public class Faktura implements Serializable {
 	private Svrha svrha;
 
 	//bi-directional many-to-one association to Stavka
+	@JsonIgnore
 	@OneToMany(mappedBy="faktura")
 	private List<Stavka> stavkas;
 

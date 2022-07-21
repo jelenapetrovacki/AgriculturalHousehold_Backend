@@ -1,4 +1,6 @@
-package agri.persistance;
+package agri.persistance.svrha;
+
+import agri.persistance.faktura.Faktura;
 
 import java.io.Serializable;
 import javax.persistence.*;

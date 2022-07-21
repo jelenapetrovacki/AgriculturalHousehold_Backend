@@ -1,4 +1,4 @@
-package agri.persistance;
+package agri.persistance.nacin_uplate;
 
 import java.io.Serializable;
 import javax.persistence.*;

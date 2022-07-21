@@ -1,0 +1,31 @@
+package agri.api.faktura;
+
+import agri.api.stavka.StavkaModel;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Collection;
+
+public interface FakturaService {
+
+    @GetMapping(
+            value    = "/fakture",
+            produces = "application/json")
+    Collection<FakturaModel> getFakture();
+
+    @GetMapping(
+            value    = "/faktureNarudzbina/{narudzbinaId}",
+            produces = "application/json")
+    Collection<FakturaModel> getFaktureByNarudzbinaId(@PathVariable int narudzbinaId);
+
+    @PostMapping(
+            value    = "/faktura",
+            consumes = "application/json",
+            produces = "application/json")
+    FakturaModel createFaktura(@RequestBody FakturaModel body);
+
+    @PutMapping(
+            value    = "/faktura",
+            consumes = "application/json",
+            produces = "application/json")
+    FakturaModel updateFaktura(@RequestBody FakturaModel body);
+}

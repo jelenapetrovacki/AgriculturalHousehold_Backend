@@ -1,4 +1,8 @@
-package agri.persistance;
+package agri.persistance.stavka;
+
+import agri.persistance.faktura.Faktura;
+import agri.persistance.narudzbina.Narudzbina;
+import agri.persistance.tip_proizvoda.TipProizvoda;
 
 import java.io.Serializable;
 import javax.persistence.*;

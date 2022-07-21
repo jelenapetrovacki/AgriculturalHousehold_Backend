@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import agri.api.klijent.KlijentModel;
 import agri.api.klijent.KlijentService;
-import agri.persistance.Klijent;
+import agri.persistance.klijent.Klijent;
 import agri.persistance.klijent.KlijentRepository;
 
 @RestController
