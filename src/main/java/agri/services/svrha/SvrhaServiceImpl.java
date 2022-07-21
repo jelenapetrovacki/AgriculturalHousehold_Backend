@@ -5,10 +5,12 @@ import agri.api.svrha.SvrhaService;
 import agri.persistance.svrha.Svrha;
 import agri.persistance.svrha.SvrhaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collection;
 
+@CrossOrigin
 @RestController
 public class SvrhaServiceImpl implements SvrhaService {
 

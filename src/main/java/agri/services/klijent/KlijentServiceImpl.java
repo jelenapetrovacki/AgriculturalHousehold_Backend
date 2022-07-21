@@ -3,6 +3,7 @@ package agri.services.klijent;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 
 import agri.api.klijent.KlijentModel;
@@ -10,6 +11,7 @@ import agri.api.klijent.KlijentService;
 import agri.persistance.klijent.Klijent;
 import agri.persistance.klijent.KlijentRepository;
 
+@CrossOrigin
 @RestController
 public class KlijentServiceImpl implements KlijentService{
 

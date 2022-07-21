@@ -7,10 +7,12 @@ import agri.persistance.faktura.Faktura;
 import agri.persistance.faktura.FakturaRepository;
 import agri.persistance.stavka.Stavka;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collection;
 
+@CrossOrigin
 @RestController
 public class FakturaServiceimpl implements FakturaService {
 

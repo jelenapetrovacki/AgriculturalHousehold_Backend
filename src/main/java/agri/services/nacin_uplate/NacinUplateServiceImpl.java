@@ -7,9 +7,11 @@ import agri.persistance.nacin_uplate.NacinUplate;
 import agri.persistance.nacin_uplate.NacinUplateRepository;
 import agri.persistance.svrha.Svrha;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collection;
+@CrossOrigin
 @RestController
 public class NacinUplateServiceImpl implements NacinUplateService {
     @Autowired

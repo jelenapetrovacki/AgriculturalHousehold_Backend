@@ -5,10 +5,12 @@ import agri.api.narudzbina.NarudzbinaService;
 import agri.persistance.narudzbina.Narudzbina;
 import agri.persistance.narudzbina.NarudzbinaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collection;
 
+@CrossOrigin
 @RestController
 public class NarudzbinaServiceImpl implements NarudzbinaService {
 

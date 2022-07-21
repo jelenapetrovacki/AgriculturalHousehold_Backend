@@ -9,10 +9,12 @@ import agri.persistance.stavka.Stavka;
 import agri.persistance.stavka.StavkaRepository;
 import agri.persistance.uplata.Uplata;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collection;
 
+@CrossOrigin
 @RestController
 public class StavkaServiceImpl implements StavkaService {
 

@@ -5,10 +5,12 @@ import agri.api.tip_proizvoda.TipProizvodaService;
 import agri.persistance.tip_proizvoda.TipProizvoda;
 import agri.persistance.tip_proizvoda.TipProizvodaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collection;
 
+@CrossOrigin
 @RestController
 public class TipProizvodaServiceImpl implements TipProizvodaService {
 
