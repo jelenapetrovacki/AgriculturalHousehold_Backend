@@ -31,7 +31,6 @@ public interface StavkaMapper {
             @Mapping(target = "tipProizvoda.nazivTipa", source="api.tip_proizvoda.naziv_tipa"),
             @Mapping(target = "tipProizvoda.jedinicnaCena", source="api.tip_proizvoda.jedinicna_cena")
     })
-    //moraju se mapirati obelezja sva
     Stavka apiToEntity(StavkaModel api);
 
 
