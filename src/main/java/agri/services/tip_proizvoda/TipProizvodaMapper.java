@@ -23,6 +23,5 @@ public interface TipProizvodaMapper {
     })
     TipProizvoda apiToEntity(TipProizvodaModel api);
 
-
     Collection<TipProizvodaModel> entityListToApiList(Collection<TipProizvoda> entity);
 }

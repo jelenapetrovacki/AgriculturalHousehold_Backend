@@ -18,14 +18,18 @@ public interface StavkaMapper {
     @Mappings({
             @Mapping(target = "jedinica_mere", source="entity.jedinicaMere"),
             @Mapping(target = "obracunata_cena", source="entity.obracunataCena"),
-            @Mapping(target = "tip_proizvoda", source="entity.tipProizvoda")
+            @Mapping(target = "tip_proizvoda", source="entity.tipProizvoda"),
+            @Mapping(target = "tip_proizvoda.naziv_tipa", source="entity.tipProizvoda.nazivTipa"),
+            @Mapping(target = "tip_proizvoda.jedinicna_cena", source="entity.tipProizvoda.jedinicnaCena")
     })
     StavkaModel entityToApi(Stavka entity);
 
     @Mappings({
             @Mapping(target = "jedinicaMere", source="api.jedinica_mere"),
             @Mapping(target = "obracunataCena", source="api.obracunata_cena"),
-            @Mapping(target = "tipProizvoda", source="api.tip_proizvoda")
+            @Mapping(target = "tipProizvoda", source="api.tip_proizvoda"),
+            @Mapping(target = "tipProizvoda.nazivTipa", source="api.tip_proizvoda.naziv_tipa"),
+            @Mapping(target = "tipProizvoda.jedinicnaCena", source="api.tip_proizvoda.jedinicna_cena")
     })
     Stavka apiToEntity(StavkaModel api);
 
