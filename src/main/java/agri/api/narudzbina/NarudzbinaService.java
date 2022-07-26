@@ -7,7 +7,7 @@ import java.util.Collection;
 
 public interface NarudzbinaService {
     @GetMapping(
-            value    = "/narudzbine",
+            value    = "/narudzbina",
             produces = "application/json")
     Collection<NarudzbinaModel> getNarudzbine();
 

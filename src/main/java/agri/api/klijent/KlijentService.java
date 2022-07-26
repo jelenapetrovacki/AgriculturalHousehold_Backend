@@ -13,7 +13,7 @@ import java.util.List;
 public interface KlijentService {
 
     @GetMapping(
-            value    = "/klijenti",
+            value    = "/klijent",
             produces = "application/json")
     Collection<KlijentModel> getKlijenti();
 

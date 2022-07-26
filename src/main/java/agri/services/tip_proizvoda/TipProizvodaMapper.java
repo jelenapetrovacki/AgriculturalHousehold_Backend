@@ -12,11 +12,13 @@ import java.util.Collection;
 public interface TipProizvodaMapper {
 
     @Mappings({
+    	@Mapping(target = "naziv_tipa", source="entity.nazivTipa"),
             @Mapping(target = "jedinicna_cena", source="entity.jedinicnaCena")
     })
     TipProizvodaModel entityToApi(TipProizvoda entity);
 
     @Mappings({
+    	 @Mapping(target = "nazivTipa", source="api.naziv_tipa"),
             @Mapping(target = "jedinicnaCena", source="api.jedinicna_cena")
     })
     TipProizvoda apiToEntity(TipProizvodaModel api);

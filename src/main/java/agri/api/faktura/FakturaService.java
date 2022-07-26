@@ -8,7 +8,7 @@ import java.util.Collection;
 public interface FakturaService {
 
     @GetMapping(
-            value    = "/fakture",
+            value    = "/faktura",
             produces = "application/json")
     Collection<FakturaModel> getFakture();
 

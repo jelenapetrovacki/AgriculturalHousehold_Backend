@@ -9,18 +9,18 @@ import java.util.Collection;
 
 public interface TipProizvodaService {
     @GetMapping(
-            value    = "/tipoviproizvoda",
+            value    = "/tip_proizvoda",
             produces = "application/json")
     Collection<TipProizvodaModel> getTipoviProizvoda();
 
     @PostMapping(
-            value    = "/tipproizvoda",
+            value    = "/tip_proizvoda",
             consumes = "application/json",
             produces = "application/json")
     TipProizvodaModel createTipProizvoda(@RequestBody TipProizvodaModel body);
 
     @PutMapping(
-            value    = "/tipproizvoda",
+            value    = "/tip_proizvoda",
             consumes = "application/json",
             produces = "application/json")
     TipProizvodaModel updateTipProizvodaModel(@RequestBody TipProizvodaModel body);

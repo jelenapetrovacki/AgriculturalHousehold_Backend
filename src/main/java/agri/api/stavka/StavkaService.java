@@ -7,7 +7,7 @@ import java.util.Collection;
 
 public interface StavkaService {
     @GetMapping(
-            value    = "/stavke",
+            value    = "/stavka",
             produces = "application/json")
     Collection<StavkaModel> getStavke();
 
