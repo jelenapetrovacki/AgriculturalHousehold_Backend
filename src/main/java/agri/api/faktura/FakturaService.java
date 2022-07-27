@@ -17,6 +17,11 @@ public interface FakturaService {
             produces = "application/json")
     Collection<FakturaModel> getFaktureByNarudzbinaId(@PathVariable int narudzbinaId);
 
+    @GetMapping(
+            value    = "/brojUplata/{fakturaId}",
+            produces = "application/json")
+    Integer getBrojUplata(@PathVariable int fakturaId);
+    
     @PostMapping(
             value    = "/faktura",
             consumes = "application/json",

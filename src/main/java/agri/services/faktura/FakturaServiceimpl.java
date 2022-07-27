@@ -46,4 +46,9 @@ public class FakturaServiceimpl implements FakturaService {
     public FakturaModel updateFaktura(FakturaModel body) {
         return createFaktura(body);
     }
+
+	@Override
+	public Integer getBrojUplata(int fakturaId) {
+		return fakturaRepository.brojUplata(fakturaId);
+	}
 }

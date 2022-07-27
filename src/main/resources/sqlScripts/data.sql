@@ -56,7 +56,7 @@ INSERT INTO tip_proizvoda VALUES(nextval('tip_proizvoda_seq'),'Nazimica',40000, 
 INSERT INTO tip_proizvoda VALUES(nextval('tip_proizvoda_seq'),'Nerast',60000, true);
 INSERT INTO tip_proizvoda VALUES(nextval('tip_proizvoda_seq'),'Tovljenik',25000, true);
 --stavka
-INSERT INTO stavka VALUES(nextval('stavka_seq'),18, 'kg',0,2,2,2);
+INSERT INTO stavka VALUES(nextval('stavka_seq'),18, 'kg',0,2,2,null);
 INSERT INTO stavka VALUES(nextval('stavka_seq'),5, 'kg',0,2,2,2);
 INSERT INTO stavka VALUES(nextval('stavka_seq'),14, 'kg',0,2,2,1);
 INSERT INTO stavka VALUES(nextval('stavka_seq'),13, 'kg',0,2,2,1);
