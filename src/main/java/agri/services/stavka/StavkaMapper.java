@@ -36,4 +36,5 @@ public interface StavkaMapper {
 
 
     Collection<StavkaModel> entityListToApiList(Collection<Stavka> entity);
+    Collection<Stavka> apiListToEntityList(Collection<StavkaModel> api);
 }

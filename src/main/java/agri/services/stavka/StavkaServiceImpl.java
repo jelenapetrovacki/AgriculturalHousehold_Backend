@@ -12,8 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Collection;
-import java.util.Iterator;
+import java.util.*;
 
 @CrossOrigin
 @RestController
@@ -40,6 +39,13 @@ public class StavkaServiceImpl implements StavkaService {
     }
 
     @Override
+    public Collection<StavkaModel> getNefakturisaneStavkeByNarudzbinaId(int narudzbinaId) {
+        Collection<Stavka> nefakturisaneStavkeByNarudzbina = stavkaRepository.findNefakturisaneStavkeNarudzbine(narudzbinaId);
+        Collection<StavkaModel> nefakturisaneStavkeByNarudzbinaModel = mapper.entityListToApiList(nefakturisaneStavkeByNarudzbina);
+        return nefakturisaneStavkeByNarudzbinaModel;
+    }
+
+    @Override
     public Collection<StavkaModel> getStavkeByFakturaId(int fakturaId) {
         Collection<Stavka> stavkeByFaktura = stavkaRepository.findByFakturaId(fakturaId);
         Collection<StavkaModel> stavkeByFakturaModel = mapper.entityListToApiList(stavkeByFaktura);
@@ -57,6 +63,14 @@ public class StavkaServiceImpl implements StavkaService {
     @Override
     public StavkaModel updateStavka(StavkaModel body) {
         return createStavka(body);
+    }
+
+    @Override
+    public void updateStavke(StavkaModel[] body) {
+        System.out.println(body[0].getKolicina());
+        Collection<Stavka> stavke = mapper.apiListToEntityList(Arrays.asList(body));
+        stavke.removeIf(Objects::isNull);
+        stavkaRepository.saveAll(stavke);
     }
 
     @Override
