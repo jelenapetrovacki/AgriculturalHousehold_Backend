@@ -9,7 +9,7 @@ public class Svinje_po_rasi {
 
     @PrimaryKeyColumn(
             name = "oznaka_rase", ordinal = 0, type = PrimaryKeyType.PARTITIONED)
-    private String oznaka_rase;
+    private String oznakarase;
 
     @PrimaryKeyColumn(
             name = "tetovir_broj_svinje",
@@ -22,12 +22,12 @@ public class Svinje_po_rasi {
     @CassandraType(type = CassandraType.Name.TEXT)
     private String naziv_rase;
 
-    public String getOznaka_rase() {
-        return oznaka_rase;
+    public String getOznakarase() {
+        return oznakarase;
     }
 
-    public void setOznaka_rase(String oznaka_rase) {
-        this.oznaka_rase = oznaka_rase;
+    public void setOznakarase(String oznakarase) {
+        this.oznakarase = oznakarase;
     }
 
     public String getTetovir_broj_svinje() {

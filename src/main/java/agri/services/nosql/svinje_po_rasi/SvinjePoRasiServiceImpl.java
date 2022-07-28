@@ -22,16 +22,14 @@ public class SvinjePoRasiServiceImpl implements SvinjePoRasiService {
     @Autowired
     private SvinjePoRasiMapper mapper;
 
+    // Ovu možemo da brišemo
     @GetMapping("/svinjePoRasi")
     public Collection<Svinje_po_rasi> getSvinjePoRasi() {
-
         return svinje_po_rasi_Repository.findAll();
     }
 
     @Override
     public Collection<SvinjePoRasiModel> getRasa(String oznaka_rase) {
-
-    	//Optional<Svinje_po_rasi> svinje = svinje_po_rasi_Repository.findById(oznaka_rase);
-        return null;
+        return mapper.entityListToApiList(svinje_po_rasi_Repository.findOneByOznakarase(oznaka_rase));
     }
 }
