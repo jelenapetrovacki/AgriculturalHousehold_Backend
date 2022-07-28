@@ -1,7 +1,7 @@
 package agri.services.svinje_po_rasi;
 
-import agri.persistance.svinje_po_rasi.Svinje_po_rasi;
-import agri.persistance.svinje_po_rasi.Svinje_po_rasi_Repository;
+import agri.persistance.nosql.svinje_po_rasi.Svinje_po_rasi;
+import agri.persistance.nosql.svinje_po_rasi.Svinje_po_rasi_Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;

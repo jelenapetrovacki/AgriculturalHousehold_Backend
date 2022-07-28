@@ -1,4 +1,4 @@
-package agri.persistance.svinje_po_rasi;
+package agri.persistance.nosql.svinje_po_rasi;
 
 import org.springframework.data.cassandra.core.cql.Ordering;
 import org.springframework.data.cassandra.core.cql.PrimaryKeyType;
