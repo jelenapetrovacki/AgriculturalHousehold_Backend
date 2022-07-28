@@ -1,5 +1,7 @@
-package agri.services.svinje_po_rasi;
+package agri.services.nosql.svinje_po_rasi;
 
+import agri.api.nosql.svinje_po_rasi.SvinjePoRasiModel;
+import agri.api.nosql.svinje_po_rasi.SvinjePoRasiService;
 import agri.persistance.nosql.svinje_po_rasi.Svinje_po_rasi;
 import agri.persistance.nosql.svinje_po_rasi.Svinje_po_rasi_Repository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,16 +10,28 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collection;
+import java.util.Optional;
 
 @CrossOrigin
 @RestController
-public class SvinjePoRasiServiceImpl {
+public class SvinjePoRasiServiceImpl implements SvinjePoRasiService {
 
     @Autowired
     private Svinje_po_rasi_Repository svinje_po_rasi_Repository;
 
+    @Autowired
+    private SvinjePoRasiMapper mapper;
+
     @GetMapping("/svinjePoRasi")
     public Collection<Svinje_po_rasi> getSvinjePoRasi() {
+
         return svinje_po_rasi_Repository.findAll();
+    }
+
+    @Override
+    public Collection<SvinjePoRasiModel> getRasa(String oznaka_rase) {
+
+    	//Optional<Svinje_po_rasi> svinje = svinje_po_rasi_Repository.findById(oznaka_rase);
+        return null;
     }
 }
