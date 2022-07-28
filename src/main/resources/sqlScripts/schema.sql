@@ -36,7 +36,7 @@ create table narudzbina
 (
 	id integer not null,
     datum date,
-	iznos numeric, --triger
+	iznos numeric,
 	klijent integer not null,
 	CONSTRAINT PK_narudzbina PRIMARY KEY (id),
 	CONSTRAINT FK_narudzbina_klijent FOREIGN KEY (klijent) REFERENCES klijent(id)
