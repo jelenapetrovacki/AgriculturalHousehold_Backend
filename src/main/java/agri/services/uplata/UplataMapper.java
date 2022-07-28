@@ -14,12 +14,14 @@ import java.util.Collection;
 public interface UplataMapper {
 
     @Mappings({
-            @Mapping(target = "datum_uplate", source="entity.datumUplate")
+            @Mapping(target = "datum_uplate", source="entity.datumUplate"),
+            @Mapping(target = "nacin_uplate", source="entity.nacinUplate")
     })
     UplataModel entityToApi(Uplata entity);
 
     @Mappings({
-            @Mapping(target = "datumUplate", source="api.datum_uplate")
+            @Mapping(target = "datumUplate", source="api.datum_uplate"),
+            @Mapping(target = "nacinUplate", source="api.nacin_uplate")
     })
     Uplata apiToEntity(UplataModel api);
 

@@ -21,7 +21,11 @@ public interface FakturaService {
             value    = "/brojUplata/{fakturaId}",
             produces = "application/json")
     Integer getBrojUplata(@PathVariable int fakturaId);
-    
+
+    @DeleteMapping(
+            value    = "/faktura/{fakturaId}")
+    void deleteFaktura(@PathVariable int fakturaId);
+
     @PostMapping(
             value    = "/faktura",
             consumes = "application/json",

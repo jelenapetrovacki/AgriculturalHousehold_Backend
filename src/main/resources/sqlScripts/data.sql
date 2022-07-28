@@ -37,10 +37,10 @@ INSERT INTO nacin_uplate VALUES(nextval('nacin_uplate_seq'),'Kartica');
 INSERT INTO nacin_uplate VALUES(nextval('nacin_uplate_seq'),'Keš');
 
 --uplata
-INSERT INTO uplata VALUES(nextval('uplata_seq'),CAST('06 JAN 2020'AS DATE),1);
-INSERT INTO uplata VALUES(nextval('uplata_seq'),CAST('16 JAN 2020'AS DATE),3);
-INSERT INTO uplata VALUES(nextval('uplata_seq'),CAST('06 JAN 2020'AS DATE),2);
-INSERT INTO uplata VALUES(nextval('uplata_seq'),CAST('06 JAN 2020'AS DATE),4);
+INSERT INTO uplata VALUES(nextval('uplata_seq'),CAST('06 JAN 2020'AS DATE),1,1);
+INSERT INTO uplata VALUES(nextval('uplata_seq'),CAST('16 JAN 2020'AS DATE),3,1);
+INSERT INTO uplata VALUES(nextval('uplata_seq'),CAST('06 JAN 2020'AS DATE),2,2);
+INSERT INTO uplata VALUES(nextval('uplata_seq'),CAST('06 JAN 2020'AS DATE),4,2);
 
 --tip proizvoda
 INSERT INTO tip_proizvoda VALUES(nextval('tip_proizvoda_seq'),'Prase',6000, true);

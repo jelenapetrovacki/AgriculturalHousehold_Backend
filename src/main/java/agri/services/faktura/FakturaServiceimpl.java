@@ -51,4 +51,9 @@ public class FakturaServiceimpl implements FakturaService {
 	public Integer getBrojUplata(int fakturaId) {
 		return fakturaRepository.brojUplata(fakturaId);
 	}
+
+    @Override
+    public void deleteFaktura(int fakturaId) {
+        fakturaRepository.deleteById(fakturaId);
+    }
 }

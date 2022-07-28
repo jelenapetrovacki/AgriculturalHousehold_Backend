@@ -1,6 +1,7 @@
 package agri.persistance.uplata;
 
 import agri.persistance.faktura.Faktura;
+import agri.persistance.nacin_uplate.NacinUplate;
 
 import java.io.Serializable;
 import javax.persistence.*;
@@ -30,6 +31,10 @@ public class Uplata implements Serializable {
 	@JoinColumn(name="faktura")
 	private Faktura faktura;
 
+	@ManyToOne
+	@JoinColumn(name="nacin_uplate")
+	private NacinUplate nacinUplate;
+
 	public Uplata() {
 	}
 
@@ -57,4 +62,11 @@ public class Uplata implements Serializable {
 		this.faktura = faktura;
 	}
 
+	public NacinUplate getNacinUplate() {
+		return nacinUplate;
+	}
+
+	public void setNacinUplate(NacinUplate nacinUplate) {
+		this.nacinUplate = nacinUplate;
+	}
 }
