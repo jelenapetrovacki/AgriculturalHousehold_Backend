@@ -15,7 +15,7 @@ public class Svinje_po_rasi {
             name = "tetovir_broj_svinje",
             ordinal = 1,
             type = PrimaryKeyType.CLUSTERED,
-            ordering = Ordering.DESCENDING)
+            ordering = Ordering.ASCENDING)
     private String tetovir_broj_svinje;
 
     @Column("naziv_rase")

@@ -12,8 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Collection;
 import java.util.Optional;
 
-@CrossOrigin
+
 @RestController
+@CrossOrigin
 public class SvinjePoRasiServiceImpl implements SvinjePoRasiService {
 
     @Autowired
@@ -21,12 +22,6 @@ public class SvinjePoRasiServiceImpl implements SvinjePoRasiService {
 
     @Autowired
     private SvinjePoRasiMapper mapper;
-
-    // Ovu možemo da brišemo
-    @GetMapping("/svinjePoRasi")
-    public Collection<Svinje_po_rasi> getSvinjePoRasi() {
-        return svinje_po_rasi_Repository.findAll();
-    }
 
     @Override
     public Collection<SvinjePoRasiModel> getRasa(String oznaka_rase) {
