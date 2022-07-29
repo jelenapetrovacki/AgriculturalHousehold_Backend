@@ -5,13 +5,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import agri.api.nosql.bolesti_po_pregledu.BolestiPoPregleduModel;
 
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.Date;
+import java.util.UUID;
 
 public interface TerapijePoDanuService {
 
     @GetMapping(
-            value    = "/terapijePoDanu/{danasnji_dan}",
+            value    = "/terapijePoDanu/{sifraTerapije}",
             produces = "application/json")
-    Collection<TerapijePoDAnuModel> getTerapijePoDanu(@PathVariable Date danasnji_dan);
+    Collection<TerapijePoDanuModel> getTerapijePoDanu(@PathVariable UUID sifraTerapije);
 }

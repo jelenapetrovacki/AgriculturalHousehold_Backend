@@ -1,22 +1,23 @@
 package agri.api.nosql.terapije_po_danu;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.UUID;
 
-public class TerapijePoDAnuModel {
+public class TerapijePoDanuModel {
 
-    private int sifra_terapije;
+    private UUID sifra_terapije;
     private int godina;
-    private Date datum_od;
+    private LocalDate datum_od;
     private String tetovir_broj_svinje;
-    private Date datum_do;
+    private LocalDate datum_do;
     private String doza;
     private int dnevni_broj_davanja;
     private String lek;
 
-    public TerapijePoDAnuModel() {
+    public TerapijePoDanuModel() {
     }
 
-    public TerapijePoDAnuModel(int sifra_terapije, int godina, Date datum_od, String tetovir_broj_svinje, Date datum_do, String doza, int dnevni_broj_davanja, String lek) {
+    public TerapijePoDanuModel(UUID sifra_terapije, int godina, LocalDate datum_od, String tetovir_broj_svinje, LocalDate datum_do, String doza, int dnevni_broj_davanja, String lek) {
         this.sifra_terapije = sifra_terapije;
         this.godina = godina;
         this.datum_od = datum_od;
@@ -27,11 +28,11 @@ public class TerapijePoDAnuModel {
         this.lek = lek;
     }
 
-    public int getSifra_terapije() {
+    public UUID getSifra_terapije() {
         return sifra_terapije;
     }
 
-    public void setSifra_terapije(int sifra_terapije) {
+    public void setSifra_terapije(UUID sifra_terapije) {
         this.sifra_terapije = sifra_terapije;
     }
 
@@ -43,11 +44,11 @@ public class TerapijePoDAnuModel {
         this.godina = godina;
     }
 
-    public Date getDatum_od() {
+    public LocalDate getDatum_od() {
         return datum_od;
     }
 
-    public void setDatum_od(Date datum_od) {
+    public void setDatum_od(LocalDate datum_od) {
         this.datum_od = datum_od;
     }
 
@@ -59,11 +60,11 @@ public class TerapijePoDAnuModel {
         this.tetovir_broj_svinje = tetovir_broj_svinje;
     }
 
-    public Date getDatum_do() {
+    public LocalDate getDatum_do() {
         return datum_do;
     }
 
-    public void setDatum_do(Date datum_do) {
+    public void setDatum_do(LocalDate datum_do) {
         this.datum_do = datum_do;
     }
 

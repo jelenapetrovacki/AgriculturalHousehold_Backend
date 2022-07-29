@@ -23,7 +23,7 @@ public class VeterinarskiBrojPoSvinji {
             name = "datum_od",
             ordinal = 1,
             type = PrimaryKeyType.CLUSTERED,
-            ordering = Ordering.DESCENDING)
+            ordering = Ordering.ASCENDING)
     private LocalDate datum_od;
 
     @Column("veterinarski_broj")

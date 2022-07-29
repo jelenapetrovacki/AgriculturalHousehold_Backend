@@ -1,0 +1,37 @@
+package agri.services.nosql.terapije_po_danu;
+
+import java.time.LocalDate;
+import java.util.Collection;
+import java.util.Date;
+import java.util.UUID;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+
+import agri.api.nosql.terapije_po_danu.TerapijePoDanuModel;
+import agri.api.nosql.terapije_po_danu.TerapijePoDanuService;
+import agri.persistance.terapije_po_danu.TerapijePoDanuRepository;
+
+@RestController
+@CrossOrigin
+public class TerapijePoDanuServiceImpl implements TerapijePoDanuService {
+
+	@Autowired
+	private TerapijePoDanuRepository terapijeRepository;
+	
+	@Autowired
+	private TerapijePoDanuMapper mapper; 
+	
+	@Override
+	public Collection<TerapijePoDanuModel> getTerapijePoDanu(UUID sifraTerapije) {
+		LocalDate danasnji_dan = LocalDate.now();
+		Integer god = danasnji_dan.getYear();
+		System.out.print(danasnji_dan);
+		System.out.print(god);
+		return mapper.entityListToApiList(terapijeRepository.findBySifraTerapijeAndGodinaAndDatumOdLessThanEqual(sifraTerapije,god, danasnji_dan));
+	}
+
+}
