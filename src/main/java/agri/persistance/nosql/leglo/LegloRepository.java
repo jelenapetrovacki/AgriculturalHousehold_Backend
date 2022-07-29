@@ -7,5 +7,5 @@ import java.util.List;
 
 @Repository
 public interface LegloRepository extends CassandraRepository<Leglo, String> {
-   // Leglo findOneByOznakalegla (String oznakalegla);
+    Leglo findOneByOznakalegla (String oznakalegla);
 }

@@ -12,8 +12,8 @@ import java.util.Collection;
 
 @RestController
 @CrossOrigin
-public class LegloServiceImpl  {
-/*
+public class LegloServiceImpl implements LegloService {
+
     @Autowired
     private LegloRepository legloRepository;
 
@@ -24,6 +24,6 @@ public class LegloServiceImpl  {
     public LegloModel getLeglo(String oznaka_legla) {
         return mapper.entityToApi(legloRepository.findOneByOznakalegla(oznaka_legla));
     }
-*/
+
 }
 

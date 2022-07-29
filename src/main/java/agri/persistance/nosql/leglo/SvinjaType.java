@@ -5,9 +5,9 @@ import org.springframework.data.cassandra.core.mapping.CassandraType;
 import org.springframework.data.cassandra.core.mapping.Column;
 import org.springframework.data.cassandra.core.mapping.UserDefinedType;
 
-//@UserDefinedType
+@UserDefinedType("svinja_type")
 public class SvinjaType {
-  /*  @Column(value = "tetovir_broj_svinje") //OPT
+    @Column(value = "tetovir_broj_svinje") //OPT
     @CassandraType(type = CassandraType.Name.TEXT) //OPT
     private String tetovir_broj_svinje;
 
@@ -90,5 +90,5 @@ public class SvinjaType {
     public void setNaziv_gazdinstva(String naziv_gazdinstva) {
         this.naziv_gazdinstva = naziv_gazdinstva;
     }
-    */
+    
 }

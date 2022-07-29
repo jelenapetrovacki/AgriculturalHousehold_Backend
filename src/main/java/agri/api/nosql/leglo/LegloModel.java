@@ -1,13 +1,14 @@
 package agri.api.nosql.leglo;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
 public class LegloModel {
 
     private String oznaka_legla;
-    private Date datum_prasenja;
-    private Date datum_osemenjavanja;
+    private LocalDate datum_prasenja;
+    private LocalDate datum_osemenjavanja;
     private List<String> anomalije;
     private int broj_zivih;
     private int broj_uginulih;
@@ -18,7 +19,7 @@ public class LegloModel {
     public LegloModel() {
     }
 
-    public LegloModel(String oznaka_legla, Date datum_prasenja, Date datum_osemenjavanja, List<String> anomalije, int broj_zivih, int broj_uginulih, String tip_osemenjavanja, SvinjaTypeModel majka, SvinjaTypeModel otac) {
+    public LegloModel(String oznaka_legla, LocalDate datum_prasenja, LocalDate datum_osemenjavanja, List<String> anomalije, int broj_zivih, int broj_uginulih, String tip_osemenjavanja, SvinjaTypeModel majka, SvinjaTypeModel otac) {
         this.oznaka_legla = oznaka_legla;
         this.datum_prasenja = datum_prasenja;
         this.datum_osemenjavanja = datum_osemenjavanja;
@@ -38,19 +39,19 @@ public class LegloModel {
         this.oznaka_legla = oznaka_legla;
     }
 
-    public Date getDatum_prasenja() {
+    public LocalDate getDatum_prasenja() {
         return datum_prasenja;
     }
 
-    public void setDatum_prasenja(Date datum_prasenja) {
+    public void setDatum_prasenja(LocalDate datum_prasenja) {
         this.datum_prasenja = datum_prasenja;
     }
 
-    public Date getDatum_osemenjavanja() {
+    public LocalDate getDatum_osemenjavanja() {
         return datum_osemenjavanja;
     }
 
-    public void setDatum_osemenjavanja(Date datum_osemenjavanja) {
+    public void setDatum_osemenjavanja(LocalDate datum_osemenjavanja) {
         this.datum_osemenjavanja = datum_osemenjavanja;
     }
 
