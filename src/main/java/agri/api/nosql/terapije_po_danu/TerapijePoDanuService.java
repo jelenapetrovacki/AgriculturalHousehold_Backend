@@ -13,7 +13,7 @@ import java.util.UUID;
 public interface TerapijePoDanuService {
 
     @GetMapping(
-            value    = "/terapijePoDanu/{sifraTerapije}",
+            value    = "/terapijePoDanu",
             produces = "application/json")
-    Collection<TerapijePoDanuModel> getTerapijePoDanu(@PathVariable UUID sifraTerapije);
+    Collection<TerapijePoDanuModel> getTerapijePoDanu();
 }

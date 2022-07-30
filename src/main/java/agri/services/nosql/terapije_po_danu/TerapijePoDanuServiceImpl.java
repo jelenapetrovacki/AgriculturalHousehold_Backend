@@ -26,12 +26,10 @@ public class TerapijePoDanuServiceImpl implements TerapijePoDanuService {
 	private TerapijePoDanuMapper mapper; 
 	
 	@Override
-	public Collection<TerapijePoDanuModel> getTerapijePoDanu(UUID sifraTerapije) {
+	public Collection<TerapijePoDanuModel> getTerapijePoDanu() {
 		LocalDate danasnji_dan = LocalDate.now();
 		Integer god = danasnji_dan.getYear();
-		System.out.print(danasnji_dan);
-		System.out.print(god);
-		return mapper.entityListToApiList(terapijeRepository.findBySifraTerapijeAndGodinaAndDatumOdLessThanEqual(sifraTerapije,god, danasnji_dan));
+		return mapper.entityListToApiList(terapijeRepository.findByGodinaAndDatumDoGreaterThanEqual(god, danasnji_dan));
 	}
 
 }

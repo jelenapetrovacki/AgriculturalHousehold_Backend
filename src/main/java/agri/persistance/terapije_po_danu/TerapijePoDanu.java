@@ -28,13 +28,16 @@ public class TerapijePoDanu {
             ordering = Ordering.ASCENDING)
     private LocalDate datumOd;
     
+    @PrimaryKeyColumn(
+            name = "datum_do",
+            ordinal = 3,
+            type = PrimaryKeyType.CLUSTERED,
+            ordering = Ordering.ASCENDING)
+    private LocalDate datumDo;
+    
     @Column("tetovir_broj_svinje")
     @CassandraType(type = CassandraType.Name.TEXT)
     private String tetovir_broj_svinje;
-    
-    @Column("datum_do")
-    @CassandraType(type = CassandraType.Name.DATE)
-    private LocalDate datumDo;
     
     @Column("doza")
     @CassandraType(type = CassandraType.Name.TEXT)
