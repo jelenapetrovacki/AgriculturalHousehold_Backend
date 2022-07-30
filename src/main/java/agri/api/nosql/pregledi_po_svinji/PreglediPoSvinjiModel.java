@@ -2,20 +2,21 @@ package agri.api.nosql.pregledi_po_svinji;
 
 import agri.api.nosql.veterinar.VeterinarTypeModel;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class PreglediPoSvinjiModel {
     private String tetovir_broj_svinje;
     private int sifra_pregleda;
     private String naziv_pregleda;
-    private Date datum_pregleda;
+    private LocalDate datum_pregleda;
     private String izvestaj;
     private VeterinarTypeModel veterinar;
 
     public PreglediPoSvinjiModel() {
     }
 
-    public PreglediPoSvinjiModel(String tetovir_broj_svinje, int sifra_pregleda, String naziv_pregleda, Date datum_pregleda, String izvestaj, VeterinarTypeModel veterinar) {
+    public PreglediPoSvinjiModel(String tetovir_broj_svinje, int sifra_pregleda, String naziv_pregleda, LocalDate datum_pregleda, String izvestaj, VeterinarTypeModel veterinar) {
         this.tetovir_broj_svinje = tetovir_broj_svinje;
         this.sifra_pregleda = sifra_pregleda;
         this.naziv_pregleda = naziv_pregleda;
@@ -48,11 +49,11 @@ public class PreglediPoSvinjiModel {
         this.naziv_pregleda = naziv_pregleda;
     }
 
-    public Date getDatum_pregleda() {
+    public LocalDate getDatum_pregleda() {
         return datum_pregleda;
     }
 
-    public void setDatum_pregleda(Date datum_pregleda) {
+    public void setDatum_pregleda(LocalDate datum_pregleda) {
         this.datum_pregleda = datum_pregleda;
     }
 

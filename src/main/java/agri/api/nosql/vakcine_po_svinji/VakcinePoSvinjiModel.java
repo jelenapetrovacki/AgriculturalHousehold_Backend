@@ -3,9 +3,11 @@ package agri.api.nosql.vakcine_po_svinji;
 import agri.api.nosql.veterinar.VeterinarTypeModel;
 
 import java.util.Date;
+import java.util.UUID;
 
 public class VakcinePoSvinjiModel {
     private String tetovir_broj_svinje;
+    private UUID sifra_davanja_vakcine;
     private Date datum_davanja;
     private String sifra_vakcine;
     private String naziv_tipa_vakcine;
@@ -70,5 +72,13 @@ public class VakcinePoSvinjiModel {
 
     public void setVeterinar(VeterinarTypeModel veterinar) {
         this.veterinar = veterinar;
+    }
+
+    public UUID getSifra_davanja_vakcine() {
+        return sifra_davanja_vakcine;
+    }
+
+    public void setSifra_davanja_vakcine(UUID sifra_davanja_vakcine) {
+        this.sifra_davanja_vakcine = sifra_davanja_vakcine;
     }
 }

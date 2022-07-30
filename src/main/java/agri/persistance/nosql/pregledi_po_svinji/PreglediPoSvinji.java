@@ -1,8 +1,6 @@
-package agri.persistance.nosql.vakcine_po_svinji;
+package agri.persistance.nosql.pregledi_po_svinji;
 
-import agri.api.nosql.veterinar.VeterinarTypeModel;
 import agri.persistance.nosql.veterinartype.VeterinarType;
-import com.datastax.oss.driver.internal.core.type.codec.TimeUuidCodec;
 import org.springframework.data.cassandra.core.cql.Ordering;
 import org.springframework.data.cassandra.core.cql.PrimaryKeyType;
 import org.springframework.data.cassandra.core.mapping.*;
@@ -10,35 +8,34 @@ import org.springframework.data.cassandra.core.mapping.*;
 import java.time.LocalDate;
 import java.util.UUID;
 
-@Table(value = "vakcine_po_svinji")
-public class VakcinePoSvinji {
+@Table(value = "pregledi_po_svinji")
+public class PreglediPoSvinji {
 
     @PrimaryKeyColumn(
             name = "tetovir_broj_svinje", ordinal = 0, type = PrimaryKeyType.PARTITIONED)
     private String tetovirBrojSvinje;
 
     @PrimaryKeyColumn(
-            name = "sifra_davanja_vakcine",
+            name = "sifra_pregleda",
             ordinal = 1,
             type = PrimaryKeyType.CLUSTERED,
             ordering = Ordering.ASCENDING)
-    @CassandraType(type = CassandraType.Name.TIMEUUID)
-    private UUID sifraDavanjaVakcine;
+    @CassandraType(type = CassandraType.Name.INT)
+    private int sifraPregleda;
 
-    @Column("datum_davanja")
+    @Column("datum_pregleda")
     @CassandraType(type = CassandraType.Name.DATE)
-    private LocalDate datumDavanja;
+    private LocalDate datumPregleda;
 
-    @Column("sifra_vakcine")
-    private String sifraVakcine;
+    @Column("naziv_pregleda")
+    private String nazivPregleda;
 
     @Column("naziv_tipa_vakcine")
     @CassandraType(type = CassandraType.Name.TEXT)
     private String nazivTipaVakcine;
 
-    @Column("opis_tipa_vakcine")
     @CassandraType(type = CassandraType.Name.TEXT)
-    private String opisTipaVakcine;
+    private String izvestaj;
 
     @Column("veterinar")
     @CassandraType(type = CassandraType.Name.UDT, userTypeName = "veterinar_type")
@@ -53,29 +50,28 @@ public class VakcinePoSvinji {
         this.tetovirBrojSvinje = tetovirBrojSvinje;
     }
 
-
-    public UUID getSifraDavanjaVakcine() {
-        return sifraDavanjaVakcine;
+    public int getSifraPregleda() {
+        return sifraPregleda;
     }
 
-    public void setSifraDavanjaVakcine(UUID sifraDavanjaVakcine) {
-        this.sifraDavanjaVakcine = sifraDavanjaVakcine;
+    public void setSifraPregleda(int sifraPregleda) {
+        this.sifraPregleda = sifraPregleda;
     }
 
-    public LocalDate getDatumDavanja() {
-        return datumDavanja;
+    public LocalDate getDatumPregleda() {
+        return datumPregleda;
     }
 
-    public void setDatumDavanja(LocalDate datumDavanja) {
-        this.datumDavanja = datumDavanja;
+    public void setDatumPregleda(LocalDate datumPregleda) {
+        this.datumPregleda = datumPregleda;
     }
 
-    public String getSifraVakcine() {
-        return sifraVakcine;
+    public String getNazivPregleda() {
+        return nazivPregleda;
     }
 
-    public void setSifraVakcine(String sifraVakcine) {
-        this.sifraVakcine = sifraVakcine;
+    public void setNazivPregleda(String nazivPregleda) {
+        this.nazivPregleda = nazivPregleda;
     }
 
     public String getNazivTipaVakcine() {
@@ -86,12 +82,12 @@ public class VakcinePoSvinji {
         this.nazivTipaVakcine = nazivTipaVakcine;
     }
 
-    public String getOpisTipaVakcine() {
-        return opisTipaVakcine;
+    public String getIzvestaj() {
+        return izvestaj;
     }
 
-    public void setOpisTipaVakcine(String opisTipaVakcine) {
-        this.opisTipaVakcine = opisTipaVakcine;
+    public void setIzvestaj(String izvestaj) {
+        this.izvestaj = izvestaj;
     }
 
     public VeterinarType getVeterinar() {
