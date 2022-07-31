@@ -1,17 +1,22 @@
 package agri.api.nosql.bolesti_po_pregledu;
 
+import java.util.List;
+
 public class BolestiPoPregleduModel {
     private int sifra_pregleda;
     private String oznaka_bolesti;
     private String naziv_bolesti;
 
+    private List<String> simptomi;
+
     public BolestiPoPregleduModel() {
     }
 
-    public BolestiPoPregleduModel(int sifra_pregleda, String oznaka_bolesti, String naziv_bolesti) {
+    public BolestiPoPregleduModel(int sifra_pregleda, String oznaka_bolesti, String naziv_bolesti, List<String> simptomi) {
         this.sifra_pregleda = sifra_pregleda;
         this.oznaka_bolesti = oznaka_bolesti;
         this.naziv_bolesti = naziv_bolesti;
+        this.simptomi = simptomi;
     }
 
     public int getSifra_pregleda() {
@@ -36,5 +41,13 @@ public class BolestiPoPregleduModel {
 
     public void setNaziv_bolesti(String naziv_bolesti) {
         this.naziv_bolesti = naziv_bolesti;
+    }
+
+    public List<String> getSimptomi() {
+        return simptomi;
+    }
+
+    public void setSimptomi(List<String> simptomi) {
+        this.simptomi = simptomi;
     }
 }

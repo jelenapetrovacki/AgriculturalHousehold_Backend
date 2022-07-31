@@ -1,6 +1,6 @@
 package agri.api.nosql.veterinarski_broj_po_svinji;
 
-import agri.api.nosql.veterinar.VeterinarTypeModel;
+import agri.api.nosql.veterinar_type.VeterinarTypeModel;
 
 import java.util.Date;
 

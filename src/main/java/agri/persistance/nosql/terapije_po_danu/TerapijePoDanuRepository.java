@@ -1,8 +1,7 @@
-package agri.persistance.terapije_po_danu;
+package agri.persistance.nosql.terapije_po_danu;
 
 import java.time.LocalDate;
 import java.util.Collection;
-import java.util.UUID;
 
 import org.springframework.data.cassandra.repository.CassandraRepository;
 

@@ -1,6 +1,6 @@
 package agri.api.nosql.vakcine_po_svinji;
 
-import agri.api.nosql.veterinar.VeterinarTypeModel;
+import agri.api.nosql.veterinar_type.VeterinarTypeModel;
 
 import java.util.Date;
 import java.util.UUID;

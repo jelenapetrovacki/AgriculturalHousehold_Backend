@@ -1,4 +1,4 @@
-package agri.api.nosql.leglo;
+package agri.api.nosql.svinja_type;
 
 public class SvinjaTypeModel {
 

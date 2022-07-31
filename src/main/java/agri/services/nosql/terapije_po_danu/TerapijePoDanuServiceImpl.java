@@ -2,18 +2,14 @@ package agri.services.nosql.terapije_po_danu;
 
 import java.time.LocalDate;
 import java.util.Collection;
-import java.util.Date;
-import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
-
 import agri.api.nosql.terapije_po_danu.TerapijePoDanuModel;
 import agri.api.nosql.terapije_po_danu.TerapijePoDanuService;
-import agri.persistance.terapije_po_danu.TerapijePoDanuRepository;
+import agri.persistance.nosql.terapije_po_danu.TerapijePoDanuRepository;
 
 @RestController
 @CrossOrigin

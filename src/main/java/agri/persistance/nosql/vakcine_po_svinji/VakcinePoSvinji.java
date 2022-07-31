@@ -1,8 +1,6 @@
 package agri.persistance.nosql.vakcine_po_svinji;
 
-import agri.api.nosql.veterinar.VeterinarTypeModel;
-import agri.persistance.nosql.veterinartype.VeterinarType;
-import com.datastax.oss.driver.internal.core.type.codec.TimeUuidCodec;
+import agri.persistance.nosql.veterinar_type.VeterinarType;
 import org.springframework.data.cassandra.core.cql.Ordering;
 import org.springframework.data.cassandra.core.cql.PrimaryKeyType;
 import org.springframework.data.cassandra.core.mapping.*;

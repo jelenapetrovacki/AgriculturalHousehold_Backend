@@ -1,4 +1,4 @@
-package agri.api.nosql.veterinar;
+package agri.api.nosql.veterinar_type;
 
 public class VeterinarTypeModel {
     private String ime;

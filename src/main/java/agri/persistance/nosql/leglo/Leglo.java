@@ -1,10 +1,10 @@
 package agri.persistance.nosql.leglo;
 
+import agri.persistance.nosql.svinja_type.SvinjaType;
 import org.springframework.data.cassandra.core.cql.PrimaryKeyType;
 import org.springframework.data.cassandra.core.mapping.*;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 @Table(value = "leglo")

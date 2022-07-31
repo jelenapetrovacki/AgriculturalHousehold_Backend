@@ -1,12 +1,11 @@
 package agri.persistance.nosql.pregledi_po_svinji;
 
-import agri.persistance.nosql.veterinartype.VeterinarType;
+import agri.persistance.nosql.veterinar_type.VeterinarType;
 import org.springframework.data.cassandra.core.cql.Ordering;
 import org.springframework.data.cassandra.core.cql.PrimaryKeyType;
 import org.springframework.data.cassandra.core.mapping.*;
 
 import java.time.LocalDate;
-import java.util.UUID;
 
 @Table(value = "pregledi_po_svinji")
 public class PreglediPoSvinji {

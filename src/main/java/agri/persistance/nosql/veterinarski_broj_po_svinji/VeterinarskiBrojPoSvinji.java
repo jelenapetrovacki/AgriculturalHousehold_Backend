@@ -10,8 +10,7 @@ import org.springframework.data.cassandra.core.mapping.Frozen;
 import org.springframework.data.cassandra.core.mapping.PrimaryKeyColumn;
 import org.springframework.data.cassandra.core.mapping.Table;
 
-import agri.persistance.nosql.leglo.SvinjaType;
-import agri.persistance.nosql.veterinartype.VeterinarType;
+import agri.persistance.nosql.veterinar_type.VeterinarType;
 @Table(value = "veterinarski_broj_po_svinji")
 public class VeterinarskiBrojPoSvinji {
 	

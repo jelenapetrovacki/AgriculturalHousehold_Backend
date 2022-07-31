@@ -1,4 +1,4 @@
-package agri.persistance.nosql.veterinartype;
+package agri.persistance.nosql.veterinar_type;
 
 import org.springframework.data.cassandra.core.mapping.CassandraType;
 import org.springframework.data.cassandra.core.mapping.Column;

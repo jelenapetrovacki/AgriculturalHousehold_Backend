@@ -1,4 +1,4 @@
-package agri.persistance.nosql.leglo;
+package agri.persistance.nosql.svinja_type;
 
 import com.datastax.oss.driver.api.core.type.DataType;
 import org.springframework.data.cassandra.core.mapping.CassandraType;

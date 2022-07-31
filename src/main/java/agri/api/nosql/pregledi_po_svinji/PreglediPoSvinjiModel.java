@@ -1,9 +1,8 @@
 package agri.api.nosql.pregledi_po_svinji;
 
-import agri.api.nosql.veterinar.VeterinarTypeModel;
+import agri.api.nosql.veterinar_type.VeterinarTypeModel;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class PreglediPoSvinjiModel {
     private String tetovir_broj_svinje;
