@@ -12,6 +12,6 @@ public interface SvinjaBrojVakcinaService {
     @GetMapping(
             value    = "/svinjaBrojVakcina/{tetovir_broj_svinje}",
             produces = "application/json")
-    Integer getBrojVakcina(@PathVariable String tetovir_broj_svinje);
+    SvinjaBrojVakcinaModel getBrojVakcina(@PathVariable String tetovir_broj_svinje);
 
 }
