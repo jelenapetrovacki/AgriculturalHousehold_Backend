@@ -1,7 +1,7 @@
 package agri.services.nosql.svinja;
 
 import agri.api.nosql.svinja.SvinjaModel;
-import agri.api.nosql.svinja.SvinjaSerivce;
+import agri.api.nosql.svinja.SvinjaService;
 import agri.persistance.nosql.svinja.SvinjaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -11,7 +11,7 @@ import java.util.Collection;
 
 @RestController
 @CrossOrigin
-public class SvinjaServiceImpl implements SvinjaSerivce {
+public class SvinjaServiceImpl implements SvinjaService {
 
     @Autowired
     private SvinjaRepository svinjaRepository;

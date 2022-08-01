@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface SvinjaRepository extends CassandraRepository<Svinja, String> {
-
+        Svinja findByTetovirBrojSvinje(String tetovirBrojSvinje);
 
 }

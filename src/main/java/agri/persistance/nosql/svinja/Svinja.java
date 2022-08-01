@@ -12,7 +12,7 @@ public class Svinja {
 
     @PrimaryKeyColumn(
             name = "tetovir_broj_svinje", ordinal = 0, type = PrimaryKeyType.PARTITIONED)
-    private String tetovir_broj_svinje;
+    private String tetovirBrojSvinje;
 
 
     @Column("oznaka_legla")
@@ -31,12 +31,12 @@ public class Svinja {
     @CassandraType(type = CassandraType.Name.TEXT)
     private String aktuelni_veterinarski_broj;
 
-    public String getTetovir_broj_svinje() {
-        return tetovir_broj_svinje;
+    public String getTetovirBrojSvinje() {
+        return tetovirBrojSvinje;
     }
 
-    public void setTetovir_broj_svinje(String tetovir_broj_svinje) {
-        this.tetovir_broj_svinje = tetovir_broj_svinje;
+    public void setTetovirBrojSvinje(String tetovirBrojSvinje) {
+        this.tetovirBrojSvinje = tetovirBrojSvinje;
     }
 
     public String getOznaka_legla() {

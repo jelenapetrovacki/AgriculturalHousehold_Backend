@@ -18,16 +18,20 @@ public class VeterinarskiBrojPoSvinji {
             name = "tetovir_broj_svinje", ordinal = 0, type = PrimaryKeyType.PARTITIONED)
     private String tetovirBrojSvinje;
 
+	@PrimaryKeyColumn(
+			name = "veterinarski_broj",
+			ordinal = 1,
+			type = PrimaryKeyType.CLUSTERED,
+			ordering = Ordering.ASCENDING)
+	private String veterinarskiBroj;
+
     @PrimaryKeyColumn(
             name = "datum_od",
-            ordinal = 1,
+            ordinal = 2,
             type = PrimaryKeyType.CLUSTERED,
-            ordering = Ordering.ASCENDING)
+            ordering = Ordering.DESCENDING)
     private LocalDate datum_od;
 
-    @Column("veterinarski_broj")
-    @CassandraType(type = CassandraType.Name.TEXT)
-    private String veterinarski_broj;
 
     @Column("datum_do")
     @CassandraType(type = CassandraType.Name.DATE)
@@ -54,12 +58,13 @@ public class VeterinarskiBrojPoSvinji {
 		this.datum_od = datum_od;
 	}
 
-	public String getVeterinarski_broj() {
-		return veterinarski_broj;
+
+	public String getVeterinarskiBroj() {
+		return veterinarskiBroj;
 	}
 
-	public void setVeterinarski_broj(String veterinarski_broj) {
-		this.veterinarski_broj = veterinarski_broj;
+	public void setVeterinarskiBroj(String veterinarskiBroj) {
+		this.veterinarskiBroj = veterinarskiBroj;
 	}
 
 	public LocalDate getDatum_do() {

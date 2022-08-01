@@ -23,4 +23,9 @@ public class VakcinePoSvinjiServiceImpl implements VakcinePoSvinjiService {
     public Collection<VakcinePoSvinjiModel> getVakcinePoSvinji(String tetovir_broj_svinje) {
         return mapper.entityListToApiList(vakcinePoSvinjiRepository.findAllByTetovirBrojSvinje(tetovir_broj_svinje));
     }
+
+    @Override
+    public VakcinePoSvinjiModel postVakcinePoSvinji(VakcinePoSvinjiModel vakcinePoSvinjiModel) {
+        return null;
+    }
 }
