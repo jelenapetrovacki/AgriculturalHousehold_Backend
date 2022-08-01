@@ -14,26 +14,26 @@ import org.springframework.data.cassandra.core.mapping.Table;
 public class TerapijePoDanu {
 	
 	@PrimaryKeyColumn(
-            name = "sifra_terapije", ordinal = 0, type = PrimaryKeyType.PARTITIONED)
-    private UUID sifraTerapije;
-	
-	@PrimaryKeyColumn(
-            name = "godina", ordinal = 1, type = PrimaryKeyType.PARTITIONED)
+            name = "godina", ordinal = 0, type = PrimaryKeyType.PARTITIONED)
     private Integer godina;
-
-    @PrimaryKeyColumn(
-            name = "datum_od",
-            ordinal = 2,
-            type = PrimaryKeyType.CLUSTERED,
-            ordering = Ordering.ASCENDING)
-    private LocalDate datumOd;
-    
+	
     @PrimaryKeyColumn(
             name = "datum_do",
-            ordinal = 3,
+            ordinal = 1,
             type = PrimaryKeyType.CLUSTERED,
             ordering = Ordering.ASCENDING)
     private LocalDate datumDo;
+    
+    @PrimaryKeyColumn(
+            name = "sifra_terapije",
+            ordinal = 2,
+            type = PrimaryKeyType.CLUSTERED,
+            ordering = Ordering.ASCENDING)
+    private UUID sifraTerapije;
+    
+    @Column("datum_od")
+    @CassandraType(type = CassandraType.Name.DATE)
+    private LocalDate datum_od;
     
     @Column("tetovir_broj_svinje")
     @CassandraType(type = CassandraType.Name.TEXT)
@@ -67,12 +67,12 @@ public class TerapijePoDanu {
 		this.godina = godina;
 	}
 
-	public LocalDate getDatumOd() {
-		return datumOd;
+	public LocalDate getDatum_od() {
+		return datum_od;
 	}
 
-	public void setDatumOd(LocalDate datum_od) {
-		this.datumOd = datum_od;
+	public void setDatum_od(LocalDate datum_od) {
+		this.datum_od = datum_od;
 	}
 
 	public String getTetovir_broj_svinje() {

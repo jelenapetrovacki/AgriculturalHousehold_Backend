@@ -13,13 +13,11 @@ import agri.persistance.nosql.terapije_po_danu.TerapijePoDanu;
 public interface TerapijePoDanuMapper {
     @Mappings({
         @Mapping(target = "sifra_terapije", source="entity.sifraTerapije"),
-        @Mapping(target = "datum_od", source="entity.datumOd"),
         @Mapping(target = "datum_do", source="entity.datumDo")
     })
     TerapijePoDanuModel entityToApi(TerapijePoDanu entity);
     @Mappings({
         @Mapping(target = "sifraTerapije", source="api.sifra_terapije"),
-        @Mapping(target = "datumOd", source="api.datum_od"),
         @Mapping(target = "datumDo", source="api.datum_do")
     })
     TerapijePoDanu apiToEntity(TerapijePoDanuModel api);
