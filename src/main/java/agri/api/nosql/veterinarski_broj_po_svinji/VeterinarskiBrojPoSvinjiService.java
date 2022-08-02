@@ -17,7 +17,6 @@ public interface VeterinarskiBrojPoSvinjiService {
 
     @PostMapping(
             value    = "/arhivaVeterinarskogBroja/{stari_veterinarski_broj}",
-            produces = "application/json",
             consumes = "application/json")
     void postVeterinarskogBroja(@RequestBody VetrinarskiBrojPoSvinjiModel vetrinarskiBrojPoSvinjiModel,
                                                         @PathVariable String stari_veterinarski_broj);
