@@ -1,4 +1,4 @@
-package agri.persistance.svinja_broj_vakcina;
+package agri.persistance.nosql.svinja_broj_vakcina;
 
 import org.springframework.data.cassandra.core.cql.PrimaryKeyType;
 import org.springframework.data.cassandra.core.mapping.CassandraType;

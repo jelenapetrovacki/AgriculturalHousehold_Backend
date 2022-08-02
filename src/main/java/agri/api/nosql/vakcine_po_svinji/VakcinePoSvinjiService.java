@@ -16,7 +16,6 @@ public interface VakcinePoSvinjiService {
 
     @PostMapping(
             value    = "/vakcinePoSvinji",
-            produces = "application/json",
             consumes = "application/json")
-    VakcinePoSvinjiModel postVakcinePoSvinji(@RequestBody VakcinePoSvinjiModel vakcinePoSvinjiModel);
+    void postVakcinePoSvinji(@RequestBody VakcinePoSvinjiModel vakcinePoSvinjiModel);
 }

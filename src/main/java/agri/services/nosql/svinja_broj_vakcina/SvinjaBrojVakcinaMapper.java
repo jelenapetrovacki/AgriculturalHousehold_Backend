@@ -1,7 +1,7 @@
-package agri.services.svinja_broj_vakcina;
+package agri.services.nosql.svinja_broj_vakcina;
 
 import agri.api.nosql.svinja_broj_vakcina.SvinjaBrojVakcinaModel;
-import agri.persistance.svinja_broj_vakcina.SvinjaBrojVakcina;
+import agri.persistance.nosql.svinja_broj_vakcina.SvinjaBrojVakcina;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;

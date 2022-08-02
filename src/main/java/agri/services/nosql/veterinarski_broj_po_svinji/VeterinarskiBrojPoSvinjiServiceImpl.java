@@ -1,8 +1,5 @@
 package agri.services.nosql.veterinarski_broj_po_svinji;
 
-import java.net.InetAddress;
-import java.net.InetSocketAddress;
-import java.net.UnknownHostException;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.Collection;
@@ -13,7 +10,6 @@ import com.datastax.oss.driver.api.core.CqlSession;
 import com.datastax.oss.driver.api.core.cql.*;
 import com.datastax.oss.driver.api.querybuilder.update.UpdateStart;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.cassandra.core.CassandraTemplate;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,8 +28,6 @@ public class VeterinarskiBrojPoSvinjiServiceImpl implements VeterinarskiBrojPoSv
 	@Autowired
     private VeterinarskiBrojPoSvinjiRepository veterinarskiBrojPoSvinjiRepository;
 
-	@Autowired
-	private CassandraTemplate cassandraTemplate;
 	@Autowired
 	private SvinjaRepository svinjaRepository;
 

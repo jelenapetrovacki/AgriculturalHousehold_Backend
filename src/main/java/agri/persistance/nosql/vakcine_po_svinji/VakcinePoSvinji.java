@@ -30,6 +30,13 @@ public class VakcinePoSvinji {
     @Column("sifra_vakcine")
     private String sifraVakcine;
 
+    @Column("broj_doza_vakcine")
+    @CassandraType(type = CassandraType.Name.INT)
+    private String brojDozaVakcine;
+
+    @Column("kolicina_doze_vakcine")
+    @CassandraType(type = CassandraType.Name.INT)
+    private String kolicinaDozeVakcine;
     @Column("naziv_tipa_vakcine")
     @CassandraType(type = CassandraType.Name.TEXT)
     private String nazivTipaVakcine;
@@ -98,5 +105,21 @@ public class VakcinePoSvinji {
 
     public void setVeterinar(VeterinarType veterinar) {
         this.veterinar = veterinar;
+    }
+
+    public String getBrojDozaVakcine() {
+        return brojDozaVakcine;
+    }
+
+    public void setBrojDozaVakcine(String brojDozaVakcine) {
+        this.brojDozaVakcine = brojDozaVakcine;
+    }
+
+    public String getKolicinaDozeVakcine() {
+        return kolicinaDozeVakcine;
+    }
+
+    public void setKolicinaDozeVakcine(String kolicinaDozeVakcine) {
+        this.kolicinaDozeVakcine = kolicinaDozeVakcine;
     }
 }

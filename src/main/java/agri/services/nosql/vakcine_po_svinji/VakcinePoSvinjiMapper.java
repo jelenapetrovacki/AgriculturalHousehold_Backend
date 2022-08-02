@@ -16,6 +16,8 @@ public interface VakcinePoSvinjiMapper {
             @Mapping(target = "sifra_davanja_vakcine", source="entity.sifraDavanjaVakcine"),
             @Mapping(target = "datum_davanja", source="entity.datumDavanja"),
             @Mapping(target = "sifra_vakcine", source="entity.sifraVakcine"),
+            @Mapping(target = "broj_doza_vakcine", source="entity.brojDozaVakcine"),
+            @Mapping(target = "kolicina_doze_vakcine", source="entity.kolicinaDozeVakcine"),
             @Mapping(target = "naziv_tipa_vakcine", source="entity.nazivTipaVakcine"),
             @Mapping(target = "opis_tipa_vakcine", source="entity.opisTipaVakcine")
     })
@@ -26,6 +28,8 @@ public interface VakcinePoSvinjiMapper {
             @Mapping(target = "sifraDavanjaVakcine", source="api.sifra_davanja_vakcine"),
             @Mapping(target = "datumDavanja", source="api.datum_davanja"),
             @Mapping(target = "sifraVakcine", source="api.sifra_vakcine"),
+            @Mapping(target = "brojDozaVakcine", source="api.broj_doza_vakcine"),
+            @Mapping(target = "kolicinaDozeVakcine", source="api.kolicina_doze_vakcine"),
             @Mapping(target = "nazivTipaVakcine", source="api.naziv_tipa_vakcine"),
             @Mapping(target = "opisTipaVakcine", source="api.opis_tipa_vakcine")
     })
