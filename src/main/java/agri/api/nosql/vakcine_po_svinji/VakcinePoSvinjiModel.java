@@ -2,13 +2,14 @@ package agri.api.nosql.vakcine_po_svinji;
 
 import agri.api.nosql.veterinar_type.VeterinarTypeModel;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.UUID;
 
 public class VakcinePoSvinjiModel {
     private String tetovir_broj_svinje;
     private UUID sifra_davanja_vakcine;
-    private Date datum_davanja;
+    private LocalDate datum_davanja;
     private String sifra_vakcine;
     private int broj_doza_vakcine;
     private int kolicina_doze_vakcine;
@@ -19,7 +20,7 @@ public class VakcinePoSvinjiModel {
     public VakcinePoSvinjiModel() {
     }
 
-    public VakcinePoSvinjiModel(String tetovir_broj_svinje, UUID sifra_davanja_vakcine, Date datum_davanja, String sifra_vakcine, String naziv_tipa_vakcine, String opis_tipa_vakcine,
+    public VakcinePoSvinjiModel(String tetovir_broj_svinje, UUID sifra_davanja_vakcine, LocalDate datum_davanja, String sifra_vakcine, String naziv_tipa_vakcine, String opis_tipa_vakcine,
                                 VeterinarTypeModel veterinar, int broj_doza_vakcine, int kolicina_doze_vakcine) {
         this.tetovir_broj_svinje = tetovir_broj_svinje;
         this.sifra_davanja_vakcine = sifra_davanja_vakcine;
@@ -40,11 +41,11 @@ public class VakcinePoSvinjiModel {
         this.tetovir_broj_svinje = tetovir_broj_svinje;
     }
 
-    public Date getDatum_davanja() {
+    public LocalDate getDatum_davanja() {
         return datum_davanja;
     }
 
-    public void setDatum_davanja(Date datum_davanja) {
+    public void setDatum_davanja(LocalDate datum_davanja) {
         this.datum_davanja = datum_davanja;
     }
 
