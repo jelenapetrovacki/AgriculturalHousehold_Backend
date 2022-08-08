@@ -1,8 +1,10 @@
 package agri.services.nosql.vakcine_po_svinji;
 
+import agri.api.nosql.vakcine_po_svinji.VakcinaModel;
 import agri.api.nosql.vakcine_po_svinji.VakcinePoSvinjiModel;
 import agri.api.nosql.vakcine_po_svinji.VakcinePoSvinjiService;
 import agri.persistance.nosql.svinja_broj_vakcina.SvinjaBrojVakcinaRepository;
+import agri.persistance.nosql.vakcine_po_svinji.VakcinaRepository;
 import agri.persistance.nosql.vakcine_po_svinji.VakcinePoSvinjiRepository;
 import com.datastax.oss.driver.api.core.CqlSession;
 import com.datastax.oss.driver.api.core.cql.*;
@@ -22,17 +24,27 @@ public class VakcinePoSvinjiServiceImpl implements VakcinePoSvinjiService {
 
     @Autowired
     private VakcinePoSvinjiRepository vakcinePoSvinjiRepository;
+    @Autowired
+    private VakcinaRepository vakcinaRepository;
 
     @Autowired
     private SvinjaBrojVakcinaRepository svinjaBrojVakcinaRepository;
 
     @Autowired
-    private VakcinePoSvinjiMapper mapper;
+    private VakcinePoSvinjiMapper vakcinePoSvinjiMapper;
+
+    @Autowired
+    private VakcinaMapper vakcinaMapper;
 
 
     @Override
     public Collection<VakcinePoSvinjiModel> getVakcinePoSvinji(String tetovir_broj_svinje) {
-        return mapper.entityListToApiList(vakcinePoSvinjiRepository.findAllByTetovirBrojSvinje(tetovir_broj_svinje));
+        return vakcinePoSvinjiMapper.entityListToApiList(vakcinePoSvinjiRepository.findAllByTetovirBrojSvinje(tetovir_broj_svinje));
+    }
+
+    @Override
+    public Collection<VakcinaModel> getAllVakcine() {
+        return vakcinaMapper.entityListToApiList(vakcinaRepository.findAll());
     }
 
     @Override
@@ -77,9 +89,9 @@ public class VakcinePoSvinjiServiceImpl implements VakcinePoSvinjiService {
     private BoundStatement getVakcineInsertStatement(CqlSession session, VakcinePoSvinjiModel vakcinePoSvinjiModel) {
 
         String cqlQuery1 = "insert into vakcine_po_svinji (tetovir_broj_svinje, sifra_davanja_vakcine, " +
-                "datum_davanja, sifra_vakcine, broj_doza_vakcine, kolicina_doze_vakcine, naziv_tipa_vakcine, " +
+                "datum_davanja, sifra_vakcine, kolicina_doze_vakcine, naziv_tipa_vakcine, " +
                 "opis_tipa_vakcine, veterinar) values (:tetovir_broj_svinje, :sifra_davanja_vakcine, " +
-                ":datum_davanja, :sifra_vakcine, :broj_doza_vakcine, :kolicina_doze_vakcine, :naziv_tipa_vakcine, " +
+                ":datum_davanja, :sifra_vakcine, :kolicina_doze_vakcine, :naziv_tipa_vakcine, " +
                 ":opis_tipa_vakcine," + " {ime: :ime, prezime: :prezime, ustanova: :ust, broj_licence: :ust, kontakt: :kon});";
 
         PreparedStatement preparedInsertStatement = session.prepare(cqlQuery1);
@@ -89,7 +101,6 @@ public class VakcinePoSvinjiServiceImpl implements VakcinePoSvinjiService {
                 Uuids.timeBased(),
                 LocalDate.now(),
                 vakcinePoSvinjiModel.getSifra_vakcine(),
-                vakcinePoSvinjiModel.getBroj_doza_vakcine(),
                 vakcinePoSvinjiModel.getKolicina_doze_vakcine(),
                 vakcinePoSvinjiModel.getNaziv_tipa_vakcine(),
                 vakcinePoSvinjiModel.getOpis_tipa_vakcine(),

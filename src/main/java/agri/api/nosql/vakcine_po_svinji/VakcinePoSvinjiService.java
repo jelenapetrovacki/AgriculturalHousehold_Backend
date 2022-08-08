@@ -14,6 +14,11 @@ public interface VakcinePoSvinjiService {
             produces = "application/json")
     Collection<VakcinePoSvinjiModel> getVakcinePoSvinji(@PathVariable String tetovir_broj_svinje);
 
+    @GetMapping(
+            value    = "/vakcine",
+            produces = "application/json")
+    Collection<VakcinaModel> getAllVakcine();
+
     @PostMapping(
             value    = "/vakcinePoSvinji",
             consumes = "application/json")
