@@ -16,20 +16,32 @@ public class KategorijePoSvinji {
             name = "tetovir_broj_svinje", ordinal = 0, type = PrimaryKeyType.PARTITIONED)
     private String tetovirBrojSvinje;
 
-    @PrimaryKeyColumn(
+	@PrimaryKeyColumn(
+			name = "naziv_kategorije",
+			ordinal = 1,
+			type = PrimaryKeyType.CLUSTERED,
+			ordering = Ordering.ASCENDING)
+	private String nazivKategorije;
+
+	@PrimaryKeyColumn(
             name = "datum_od",
-            ordinal = 1,
+            ordinal = 2,
             type = PrimaryKeyType.CLUSTERED,
             ordering = Ordering.DESCENDING)
     private LocalDate datum_od;
 
-    @Column("naziv_kategorije")
-    @CassandraType(type = CassandraType.Name.TEXT)
-    private String naziv_kategorije;
-    
+
     @Column("datum_do")
     @CassandraType(type = CassandraType.Name.DATE)
     private LocalDate datum_do;
+
+	public KategorijePoSvinji(){}
+	public KategorijePoSvinji(String tetovirBrojSvinje, LocalDate datum_od, String nazivKategorije, LocalDate datum_do) {
+		this.tetovirBrojSvinje = tetovirBrojSvinje;
+		this.datum_od = datum_od;
+		this.nazivKategorije = nazivKategorije;
+		this.datum_do = datum_do;
+	}
 
 	public String getTetovirBrojSvinje() {
 		return tetovirBrojSvinje;
@@ -47,12 +59,12 @@ public class KategorijePoSvinji {
 		this.datum_od = datum_od;
 	}
 
-	public String getNaziv_kategorije() {
-		return naziv_kategorije;
+	public String getNazivKategorije() {
+		return nazivKategorije;
 	}
 
-	public void setNaziv_kategorije(String naziv_kategorije) {
-		this.naziv_kategorije = naziv_kategorije;
+	public void setNazivKategorije(String nazivKategorije) {
+		this.nazivKategorije = nazivKategorije;
 	}
 
 	public LocalDate getDatum_do() {

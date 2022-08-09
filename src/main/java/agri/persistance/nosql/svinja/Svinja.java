@@ -16,12 +16,10 @@ public class Svinja {
     @CassandraType(type = CassandraType.Name.TEXT)
     private String oznaka_legla;
 
-   // @Column("rasa")
     @CassandraType(type = CassandraType.Name.TEXT)
     @Indexed("rasa")
     private String rasa;
 
-    //@Column("kategorija")
     @CassandraType(type = CassandraType.Name.TEXT)
     @Indexed("kategorija")
     private String kategorija;
