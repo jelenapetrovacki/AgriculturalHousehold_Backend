@@ -1,10 +1,7 @@
 package agri.api.nosql.svinja;
 
 import agri.api.nosql.vakcine_po_svinji.VakcinePoSvinjiModel;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 
@@ -14,5 +11,15 @@ public interface SvinjaService {
             value    = "/svinje",
             produces = "application/json")
     Collection<SvinjaModel> getSvinje();
+
+    @GetMapping(
+            value    = "/svinjeRasa/{rasa}",
+            produces = "application/json")
+    Collection<SvinjaModel> getSvinjeRasa(@PathVariable String rasa);
+
+    @GetMapping(
+            value    = "/svinjeKategorija/{kategorija}",
+            produces = "application/json")
+    Collection<SvinjaModel> getSvinjeKategorija(@PathVariable String kategorija);
 
 }

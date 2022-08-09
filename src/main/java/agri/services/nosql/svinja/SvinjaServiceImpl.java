@@ -23,4 +23,14 @@ public class SvinjaServiceImpl implements SvinjaService {
     public Collection<SvinjaModel> getSvinje() {
         return mapper.entityListToApiList(svinjaRepository.findAll());
     }
+
+    @Override
+    public Collection<SvinjaModel> getSvinjeRasa(String rasa) {
+        return mapper.entityListToApiList(svinjaRepository.findAllByRasa(rasa));
+    }
+
+    @Override
+    public Collection<SvinjaModel> getSvinjeKategorija(String kategorija) {
+        return mapper.entityListToApiList(svinjaRepository.findAllByKategorija(kategorija));
+    }
 }

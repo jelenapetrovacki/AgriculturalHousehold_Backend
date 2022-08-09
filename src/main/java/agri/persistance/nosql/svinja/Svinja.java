@@ -2,10 +2,7 @@ package agri.persistance.nosql.svinja;
 
 import org.springframework.data.cassandra.core.cql.Ordering;
 import org.springframework.data.cassandra.core.cql.PrimaryKeyType;
-import org.springframework.data.cassandra.core.mapping.CassandraType;
-import org.springframework.data.cassandra.core.mapping.Column;
-import org.springframework.data.cassandra.core.mapping.PrimaryKeyColumn;
-import org.springframework.data.cassandra.core.mapping.Table;
+import org.springframework.data.cassandra.core.mapping.*;
 
 @Table(value = "svinja")
 public class Svinja {
@@ -19,12 +16,14 @@ public class Svinja {
     @CassandraType(type = CassandraType.Name.TEXT)
     private String oznaka_legla;
 
-    @Column("rasa")
+   // @Column("rasa")
     @CassandraType(type = CassandraType.Name.TEXT)
+    @Indexed("rasa")
     private String rasa;
 
-    @Column("kategorija")
+    //@Column("kategorija")
     @CassandraType(type = CassandraType.Name.TEXT)
+    @Indexed("kategorija")
     private String kategorija;
 
     @Column("aktuelni_veterinarski_broj")
